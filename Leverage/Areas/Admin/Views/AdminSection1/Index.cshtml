@@ -1,0 +1,36 @@
+﻿@model List<Start>
+@{ 
+    ViewData["Title"] = "Section 1";
+}
+<h2>Section 1</h2>
+<div class="table-sorter-wrapper col-lg-12 table-responsive">
+    <table id="sortable-table-2" class="table table-striped">
+        <thead>
+            <tr>
+                <th class="sortStyle ascStyle">Header<i class="mdi mdi-chevron-down"></i></th>
+                <th class="sortStyle unsortStyle">Name<i class="mdi mdi-chevron-down"></i></th>
+                <th class="sortStyle unsortStyle">Work<i class="mdi mdi-chevron-down"></i></th>
+                <th class="sortStyle unsortStyle">Description<i class="mdi mdi-chevron-down"></i></th>
+                <th class="sortStyle unsortStyle">Photo<i class="mdi mdi-chevron-down"></i></th>
+                <th class="sortStyle unsortStyle"><i class="mdi mdi-chevron-down"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var st in Model)
+            {
+                <tr>
+                    <td>@st.Header</td>
+                    <td>@st.Name</td>
+                    <td>@st.Work</td>
+                    <td>@st.Description</td> 
+                    <td><img src="~/uploads/@st.PhotoURl" alt="Alternate Text" /></td>
+                    <td>
+                        <a href="/Admin/AdminSection1/Edit/@st.ID">Edit</a>
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>
